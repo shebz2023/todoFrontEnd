@@ -1,0 +1,445 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  display: none; 
+}
+
+body {
+  scrollbar-width: none;
+  background-image: url('../public/images/leaves.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: white;
+  
+}
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+  }
+
+  .submitContainer {
+    position: static;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-bottom: 0;
+  }
+
+  form input {
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 16px;
+    outline: none;
+    margin: 4px;
+  }
+
+  .create {
+    width: fit-content;
+    padding: 8px 16px;
+    background: linear-gradient(#1a1a1a, #262626);
+    border: 2px solid seagreen;
+    border-radius: 32px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .create:hover {
+    transform: scale(1.02);
+    color: rgb(184, 251, 220);
+  }
+
+  .login {
+    width: fit-content;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border: 2px solid seagreen;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .login:hover {
+    background-color: #1a1a1a;
+    color: seagreen;
+  }
+
+  .todo-item .aTodo {
+    max-width: 350px;
+    min-width: 350px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    border: 2px solid seagreen;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .todo-item .aTodo .icons:hover {
+    transform: scale(1.03);
+    transition: ease-in .3s;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .main {
+    width: 80vw;
+  }
+
+  .submitContainer {
+    left: 30%;
+    padding: 15px;
+  }
+
+  .login {
+    right: 10%;
+  }
+
+  .todo-item .aTodo {
+    max-width: 300px;
+    min-width: 300px;
+  }
+}
+
+.main {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  width: 94dvw;
+  height: 100dvh;
+  justify-content: space-around;
+  border: 2px solid seagreen;
+  border-radius: 10px;
+}
+
+.submitContainer {
+  position: fixed;
+  left: 40%;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+form input {
+  padding: 8px 16px;
+  border-radius: 16px;
+  outline: none;
+  margin: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+form input::placeholder{
+  color:white
+}
+.create {
+  
+  width: fit-content;
+  padding: 8px 16px;
+  background: linear-gradient(#1a1a1a, #262626);
+  border: 2px solid seagreen;
+  border-radius: 32px;
+  color: white;
+  cursor: pointer;
+}
+.create:hover{
+  transform: scale(1.02);
+  color: rgb(184, 251, 220);
+}
+
+.logout{
+  margin-top: 6px;
+  padding: 6px 13px;
+  background: linear-gradient(#1a1a1a, #262626);
+  border: 2px solid seagreen;
+  border-radius: 32px;
+  color: white;
+  cursor: pointer;
+
+}
+
+.logout:hover{
+  transform: scale(1.01);
+  color: red;
+  border: 2px solid rgb(164, 16, 16);
+}
+.headings {
+  position: absolute;
+  background-color: black;
+  border-radius: 8px;
+  width: fit-content;
+  z-index: 10;
+  color: rgb(196, 188, 188);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  }
+
+  .todo-item {
+    max-height: 100dvh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+  }
+  
+ .aTodo{
+    margin-top: 10px;
+    max-width: 350px;
+    min-width:350px;
+    min-height: 50px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    border-bottom: 2px solid seagreen;
+    display: flex;
+    gap:10px;
+    justify-content: space-between;
+  }
+  .aTodo .icons{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: 0px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .aTodo .icons:hover{
+    transform: scale(1.03);
+    transition: ease-in .3s;
+  }
+.completed-todo-item{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+#paragraph {
+  min-height: 72px;
+  text-align: start;
+}
+
+button.close {
+  padding: 3px;
+  border-radius: 6px;
+  background-color: red;
+}
+
+/* login */
+
+.login-container {
+  background-image: url('../public/images/leaves.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.loginWords {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-left: 4px solid seagreen;
+  max-width: 60%;
+  height: 70dvh;
+  font-size: 12px;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(194, 206, 194);
+}
+
+.colored {
+  color: green;
+}
+
+.colorone{
+  color: rgb(77, 129, 77);
+}
+.colortwo{
+  color: rgb(141, 179, 141);
+}
+.loginForm {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid seagreen;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginItems {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.loginForm input {
+  color: seagreen;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.loginForm input:focus {
+  color: white;
+  background-color: #08201385;
+}
+
+button.login {
+  width: fit-content;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border: 2px solid seagreen;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+button.login:hover {
+  background-color: #1a1a1a;
+  color: seagreen;
+  transform: scale(1.05);
+}
+
+.loginFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.loginFooter a {
+  text-decoration: none;
+  cursor: pointer;
+  color: seagreen;
+  font-size: 20px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 4px 10px;
+}
+
+.loginFooter a:hover {
+  color: rgb(99, 153, 122);
+  background: rgb(62, 98, 62);
+}
+
+
+@media screen and (max-width: 468px) {
+  .loginWords{display: hidden;}
+  .loginForm{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    width: 100%;}
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .login-container {
+    background-size: auto;
+  }
+
+  .loginWords {
+    max-width: 100%;
+    height: auto;
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .loginForm {
+    height: auto;
+  }
+
+  .loginItems {
+    margin-bottom: 10px;
+  }
+
+  .loginForm input {
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+  }
+
+  button.login {
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+
+  .loginFooter {
+    margin-top: 10px;
+  }
+
+  .loginFooter a {
+    font-size: 16px;
+    padding: 2px 8px;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .loginWords {
+    font-size: 11px;
+  }
+
+  .loginForm input {
+    padding: 8px 14px;
+  }
+
+  button.login {
+    padding: 10px 18px;
+  }
+
+  .loginFooter a {
+    font-size: 18px;
+    padding: 3px 10px;
+  }
+}
+/* signup */
+.signup{
+  width: 30dvw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid seagreen;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.signupFooter{
+
+  display: flex;
+
+}
